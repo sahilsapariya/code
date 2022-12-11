@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+
+    {% block css %} {% endblock %}
+</head>
+
+<body>
+    <nav id="navi">
+        <div class="navbar">
+            <div class="c" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="/{{ list['_name'] }}/home">Home</a></li>
+            <li><a href="/{{ list['_name'] }}/fee-voucher">Fees Voucher</a></li>
+            <li><a href="/{{ list['_name'] }}/examresult">Exams Result</a></li>
+            <li><a href="/{{ list['_name'] }}/hall-ticket">Hall Tickets</a></li>
+            <li><a href="/{{ list['_name'] }}/mysubjects">Information</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    {% block body %} {% endblock %}
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+
+            var element = document.getElementById("navi")
+            element.classList.toggle("chng");
+        }
+    </script>
+</body>
+
+</html>

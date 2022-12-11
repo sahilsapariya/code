@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 1.1rem;
+}
+
+h1 {
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+table,
+tr,
+th,
+td {
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 0.2rem 1rem;
+}
+
+table {
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+th {
+    text-align: right;
+}
+
+input[type="radio"] {
+    margin: 0.2rem 0.5rem;
+}
+
+input[type="text"] {
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    background-color: transparent;
+    padding: 0.2rem 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+}
+
+input[type="tel"] {
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    background-color: transparent;
+    padding: 0.2rem 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+}
+
+input[type="email"] {
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    background-color: transparent;
+    padding: 0.2rem 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    background-color: aqua;
+}
+
+input[type="date"] {
+    margin: 0.2rem 0.5rem;
+    border: none;
+    font-size: 0.9rem;
+}
+
+select {
+    margin: 0.2rem 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+
+select:focus {
+    background-color: aqua;
+    outline: none;
+}
+
+.button {
+    text-align: center;
+    padding: 1rem 0 2rem 0;
+}
+
+.button button {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    background-color: rgb(215, 255, 253);
+    border: 2px solid rgb(51, 122, 119);
+}
+
+form {
+    margin: auto;
+}
+
+.common-url {
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    background: rgb(21, 53, 0);
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+}
+
+.add-ht {
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    margin: 1rem 0 1rem 5rem;
+}
+
+.download,
+.edit-ht {
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.large-table{
+    margin-left: 2rem;
+}
+@media only screen and (min-width: 830px) {
+    table {
+        margin: 0 5rem;
+    }
+
+    .button {
+        text-align: left;
+        margin-left: 11rem;
+    }
+
+    form h1 {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    table {
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    .add-ht {
+        margin: 1rem 0 1.5rem 1rem;
+    }
+}

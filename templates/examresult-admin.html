@@ -1,0 +1,36 @@
+{% extends 'base-admin.html' %}
+
+{% block title %} Student Academic History {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+{% endblock %}
+
+{% block body %} 
+    <h1>Exam Result</h1>
+    <hr>
+    <div class="download">
+        <a href="#" class="common-url">Add Exam result</a>
+    </div>
+    <hr>
+    <table>
+        <tr>
+            <th>Exam No</th>
+            <th>Exam Date</th>
+            <th>Exam Name</th>
+            <th>Total Marks</th>
+            <th>Obtain Marks</th>
+            <th>Rank</th>
+        </tr>
+        <tr>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+        </tr>
+    </table>
+
+
+{% endblock %}

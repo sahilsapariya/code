@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Hall Ticket {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<h1>Hall Ticket</h1>
+<table>
+    <tr>
+        <th>Exam No</th>
+        <th>Exam Code</th>
+        <th>Exam Type</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Download Hall Ticket</th>
+    </tr>
+    <tr>
+        <td>001</td>
+        <td>Internal</td>
+        <td>25/10/2022</td>
+        <td><div class="download"><a href="#" class="common-url">download</a></div></td>
+    </tr>
+</table>
+
+
+{% endblock %}

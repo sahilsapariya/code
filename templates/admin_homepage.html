@@ -1,0 +1,86 @@
+{% extends 'base-admin.html' %}
+
+{% block title %} Student Homepage {% endblock %}
+{% block css %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+<main>
+    
+    <h1 class="table-heading">Admin Information</h1>
+    <div>
+        <table class="table">
+            <tr>
+                <th>First name</th>
+                <td>{{ details['a_fname'] }}</td>
+            </tr>
+            <tr>
+                <th>Middle name</th>
+                <td>{{ details['a_mname'] }}</td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td>{{ details['a_lname'] }}</td>
+            </tr>
+            <tr>
+                <th>Name formate</th>
+                <td>LFM</td>
+            </tr>
+            <tr>
+                <th>Full name</th>
+                <td>{{ details['a_lname'] }} {{ details['a_fname'] }} {{ details['a_mname'] }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ details['gender'] }}</td>
+            </tr>
+            <tr>
+                <th>Birth Date</th>
+                <td>{{ details['birthdate'] }}</td>
+            </tr>
+            <!-- <tr>
+                <th>Enrollment year</th>
+                <td>{{ details['enrollment_year'] }}</td>
+            </tr> -->
+            <!-- <tr>
+                <th>Degree</th>
+                <td>{{ details['degree'] }}</td>
+            </tr> -->
+            <!-- <tr>
+                <th>Session No</th>
+                <td>{{ details['session_no'] }}</td>
+            </tr> -->
+            <tr>
+                <th>Permenent Id</th>
+                <td>{{ details['permenent_id'] }}</td>
+            </tr>
+            <!-- <tr>
+                <th>Merit Rank</th>
+                <td>{{ details['merit_rank'] }}</td>
+            </tr>    -->
+            <tr>
+                <th>Cast</th>
+                <td>{{ details['cast_catagory'] }}</td>
+            </tr>
+        </table>
+
+    </div>
+    <hr>
+    <div style="margin: 1rem 0;">
+        <a href="/{{ list['_name'] }}/add-student" class="common-url">Add student</a>
+    </div>
+</main>
+
+<script>
+    function myFunction(x) {
+        x.classList.toggle("change");
+
+        var element = document.getElementById("navi")
+        element.classList.toggle("chng");
+    }
+</script>
+{% endblock %}

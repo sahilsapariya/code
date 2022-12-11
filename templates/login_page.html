@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Bhadanesh Primary School- login </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+</head>
+
+<body>
+    <main>
+        <div class="title">
+            <div class="welcome-1">Welcome to</div>
+            <div class="school-name">Shree Bhadanesh Primary School</div>
+        </div>
+        <div class="login-box">
+            <form method="post">
+                <label for="username">Username *</label>
+                <input type="text" placeholder="Username" name="username" id="username" required>
+
+                <label for="password">Password *</label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+
+                <div id="login-note">NOTE: All students are informed that, Username for this site is his/her ID No.,
+                    And
+                    Password is his/her Birthdate (dd/mm/yyyy).
+                </div>
+
+                <label for="preview">Verify *</label>
+                <br>
+
+                <div class="myCanvas">
+                    <!-- <canvas id="myCanvas"></canvas> -->
+                </div>
+
+                {{ captcha() }}
+                <button type="button" onclick="generateCaptcha()" id="refresh-captcha">Get a new code</button>
+
+                <input type="text" name="captcha" placeholder="Enter captcha">
+
+                <!-- <input type="text" id="enterCaptchaCode" name="captchacode" placeholder="Enter Captcha code" required> -->
+
+                <div id="display-errorLine">
+                    <!-- <p></p> -->
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <div id="forgot-line">Forgot ID? <span id="getPassword">Contact counseller</span></div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="border"></div>
+
+        <div class="copywrite-content">
+            Copywrite &copy; 2022 by Shree Bhadanesh Primary School.
+            All rights Reserved.
+            Made by Sahil.
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+
+</html>

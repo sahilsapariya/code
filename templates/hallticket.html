@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Ticket</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table {
+            margin-bottom: 2rem;
+        }
+        td{
+            height: 30px;
+        }
+        .instructions{
+            text-align: left;
+            width: 50%;
+            /* margin: 0 35%; */
+        }
+        .signaturebox{
+            margin-top: 1rem;
+        }
+        .signaturebox td{
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div style="width: 80%; border: solid 2px black;">
+
+            <h1>Modi Career Academy</h1>
+            <div>
+                7QRQ+929, Astron Chowk, Sardarnagar,<br>
+                Rajkot, Gujarat 360001 <br>
+                Phone: 070690 05241 <br>
+            </div>
+            <hr>
+            <div>
+                <h2>Examination Admit Card</h2>
+                (Academic Session 2022-2023) - {{ data['exam_type'] }}
+            </div>
+            <hr>
+            <div>
+                <ul>
+                    <li>Student Name : {{ s_data['name'] }}</li>
+                    <li>Roll No : {{ s_data['roll no'] }}</li>
+                    <li>Class : {{ s_data['standard'] }}</li>
+                    <li>Semester : {{ data['semester'] }}</li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <table>
+                    <tr>
+                        <th>Exam No</th>
+                        <th>Exam Code</th>
+                        <th>Date</th>
+                        <th>Exam Time</th>
+                        <th>Supervisor's sign</th>
+                    </tr>
+                    <tr>
+                        <td>{{ data['Exam No'] }}</td>
+                        <td>{{ data['Exam Code'] }}</td>
+                        <td>{{ data['Date'] }}</td>
+                        <td>{{ data['Exam Time'] }}</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <hr>
+                <h2>General/Exam Instruction for Students</h2>
+                <div class="instructions">
+                    1. Carry All Necessary Materials.  <br>
+                    2. Follow the Instructions Carefully. <br>
+                    3. Read the Question Paper Carefully. <br>
+                    4. Getting Answer Sheet Signed by Invigilator. <br>
+                    5. Make Strategy for Writing an Answer.  <br>
+                    6. Manage Your Time. <br>
+                    7. Ignore Other Test Takers. <br>
+                    8. Listen to Any Verbal Instructions. <br>
+                </div>
+            </div>
+
+            <div class="signaturebox">
+                <table>
+                    <tr>
+                        <th>Signature of Guardian</th>
+                        <th>Class Teacher</th>
+                        <th>Rechecked By</th>
+                        <th>Principal</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} My Subjects {% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<h1>My Subjects</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Subject Name</th><th>Standard</th><th>Semester</th><th>Subject Credit</th>
+        </tr>
+        {% for subject in subjects %}
+            <tr>
+                <td>{{ subject[1] }}</td>
+                <td>{{ subject[2] }}</td>
+                <td>{{ subject[3] }}</td>
+                <td>{{ subject[4] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

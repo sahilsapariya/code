@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Hall Ticket {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Fee Voucher</h1>
+
+<table class="large-table">
+    <tr>
+        <th>Transaction Date</th>
+        <th>Voucher No</th>
+        <th>Batch year</th>
+        <th>Semester</th>
+        <th>Fees Amount</th>
+        <th>Transaction Status</th>
+        <th>Pay mode</th>
+        <th>Cheque No</th>
+        <th>Cheque Date</th>
+        <th>Paid Date</th>
+        <th>Reconsile Date</th>
+        <th>Reconsile No</th>
+        <th>Regenrate</th>
+        <th>Print Voucher</th>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td>#</td>
+        <td>n</td>
+        <td>nn</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+        <td>n</td>
+    </tr>
+</table>
+
+{% endblock %}

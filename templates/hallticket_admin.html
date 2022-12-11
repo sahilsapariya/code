@@ -1,0 +1,94 @@
+{% extends 'base-admin.html' %}
+
+{% block title %} Hall Ticket {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='user_nav_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='table_style.css') }}">
+<style>
+    .hallticketform{
+        border-top: solid 2px black;
+        padding-top: 1rem;
+        margin-top: 2rem;
+        display: none;
+    }
+    .display{
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>Hall Ticket</h1>
+<!-- <div class="add-ht">
+    <a href="#" class="common-url" style="padding: 0.7rem; border-radius:5px;">Add Hall Ticket</a>
+</div> -->
+
+<div class="add-ht">
+    <button class="common-url" style="padding: 0.7rem; border-radius:5px; cursor: pointer;" onclick="showhallticketform()">Add Hall Ticket</button>
+</div>
+<table>
+    <tr>
+        <th>Exam No</th>
+        <th>Exam Code</th>
+        <th>Exam Type</th>
+        <th>Date</th>
+        <th>Time </th>
+        <!-- <th>Download Hall Ticket</th> -->
+    </tr>
+
+    {% for row in data %}
+        <tr>
+            <td>{{ row[0].value }}</td>
+            <td>{{ row[1].value }}</td>
+            <td>{{ row[2].value }}</td>
+            <td>{{ row[3].value }}</td>
+            <td>{{ row[4].value }}</td>
+            <!-- <td><a href="/{{ row[0].value }}/" class="common-url">Download</a>  </td> -->
+        </tr>
+    {% endfor %}
+</table>
+
+<div class="hallticketform" id="hallticketform">
+    <form method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Exam Number</th>
+                <td><input type="text" name="examnumber"></td>
+            </tr>
+            <tr>
+                <th>Exam Code</th>
+                <td><input type="text" name="examcode"></td>
+            </tr>    
+            <tr>
+                <th>Exam Type</th>
+                <td><input type="text" name="examtype"></td>
+            </tr>
+            <tr>
+                <th>Semester</th>
+                <td><input type="text" name="semester"></td>
+            </tr>
+            <tr>
+                <th>Date of Exam</th>
+                <td><input type="date" name="dateofexam"></td>
+            </tr>
+            <tr>
+                <th>Time of Exam</th>
+                <td><input type="time" name="timeofexam"></td>
+            </tr>
+        </table>
+        <div class="button">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function showhallticketform(){
+        let form = document.getElementById('hallticketform');
+        form.classList.toggle('display');
+    }
+</script>
+{% endblock %}

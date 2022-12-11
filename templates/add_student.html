@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            padding: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        th {
+            border: solid 1px black;
+            border-collapse: collapse;
+            padding: 0.2rem 1rem;
+        }
+
+        table {
+            margin: auto;
+            margin-bottom: 1rem;
+        }
+
+        th {
+            text-align: right;
+        }
+
+        input[type="radio"] {
+            margin: 0.2rem 0.5rem;
+        }
+
+        input[type="text"] {
+            font-family: 'Times New Roman', Times, serif;
+            border: none;
+            background-color: transparent;
+            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 1rem;
+        }
+
+        input[type="tel"] {
+            font-family: 'Times New Roman', Times, serif;
+            border: none;
+            background-color: transparent;
+            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 1rem;
+        }
+
+        input[type="email"] {
+            font-family: 'Times New Roman', Times, serif;
+            border: none;
+            background-color: transparent;
+            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            background-color: aqua;
+        }
+
+        input[type="date"] {
+            margin: 0.2rem 0.5rem;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        select {
+            margin: 0.2rem 0.5rem;
+            padding: 0.2rem 0.5rem;
+        }
+
+        select:focus {
+            background-color: aqua;
+            outline: none;
+        }
+
+        .button {
+            text-align: center;
+            padding: 1rem 0 2rem 0;
+        }
+
+        .button button {
+            font-size: 1rem;
+            padding: 0.3rem 1rem;
+            background-color: rgb(215, 255, 253);
+            border: 2px solid rgb(51, 122, 119);
+        }
+
+        form {
+            margin: auto;
+        }
+
+        #tohide,
+        #form-for-one {
+            display: block;
+        }
+
+
+        @media only screen and (min-width: 830px) {
+            table {
+                margin-left: 5rem;
+            }
+
+            .button {
+                text-align: left;
+                margin-left: 11rem;
+            }
+
+            form h1 {
+                text-align: left;
+            }
+        }
+
+        @media only screen and (max-width: 430px) {
+            table {
+                margin: 0 1rem 1rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Add student to school</h1>
+    </center>
+    <hr>
+
+    <!-- <div class="button">
+        <button onclick="toggelform('form-for-one')">Add one student</button>
+    </div>
+
+    <form method="post" id="form-for-one">
+        <h1>Student Information</h1>
+        <table>
+            <tr>
+                <th>First name</th>
+                <td><input type="text" name="first-name"></td>
+            </tr>
+            <tr>
+                <th>Middle name</th>
+                <td><input type="text" name="middle-name"></td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td><input type="text" name="last-name"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Birth Date</th>
+                <td><input type="date" name="birth-date"></td>
+            </tr>
+            <tr>
+                <th>Permenent ID</th>
+                <td><input type="text" name="permenent-id"></td>
+            </tr>
+            <tr>
+                <th>Cast</th>
+                <td>
+                    <select name="cast" id="cast">
+                        <option>--select--</option>
+                        <option value="open">Open</option>
+                        <option value="ews">Gen-EWS</option>
+                        <option value="sebc">SEBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Enrollment year</th>
+                <td><input type="text" name="enrollment-year"></td>
+            </tr>
+            <tr>
+                <th>Standard</th>
+                <td>
+                    <select name="standard" id="standard">
+                        <option>--select--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Percentage</th>
+                <td><input type="text" name="percentage"></td>
+            </tr>
+        </table>
+
+        <h1>Contact Information</h1>
+
+        <table>
+            <tr>
+                <th>Home Address</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>Pincode</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>
+                    <select name="state" id="states" required>
+                        <option>--select--</option>
+                        <option value="ap">Andhra Pradesh</option>
+                        <option value="ar">Arunachal Pradesh</option>
+                        <option value="as">Assam</option>
+                        <option value="br">Bihar</option>
+                        <option value="ct">Chhattisgarh</option>
+                        <option value="ga">Goa</option>
+                        <option value="gj">Gujarat</option>
+                        <option value="hr">Haryana</option>
+                        <option value="hp">Himachal Pradesh</option>
+                        <option value="jk">Jammu and Kashmir</option>
+                        <option value="jh">Jharkhand</option>
+                        <option value="ka">Karnataka</option>
+                        <option value="kl">Kerala</option>
+                        <option value="mp">Madhya Pradesh</option>
+                        <option value="mh">Maharastra</option>
+                        <option value="mn">Manipur</option>
+                        <option value="ml">Meghalaya</option>
+                        <option value="mz">Mizoram</option>
+                        <option value="nl">Nagaland</option>
+                        <option value="or">Odisha</option>
+                        <option value="pb">Punjab</option>
+                        <option value="rj">Rajasthan</option>
+                        <option value="sk">Sikkim</option>
+                        <option value="tn">Tamil Nadu</option>
+                        <option value="tg">Telangana</option>
+                        <option value="tr">Tripura</option>
+                        <option value="ut">Uttarakhand</option>
+                        <option value="up">Uttar Pradesh</option>
+                        <option value="wb">West Bengal</option>
+                        <option value="an">Andaman and Nicobar Islands</option>
+                        <option value="ch">Chandigarh</option>
+                        <option value="dn">Dadra and Nagar Haveli</option>
+                        <option value="dd">Daman and Diu</option>
+                        <option value="dl">Delhi</option>
+                        <option value="ld">Lakshadweep</option>
+                        <option value="py">Puducherry</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Mobile no</th>
+                <td><input type="tel" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" required></td>
+            </tr>
+        </table>
+
+        <div class="button">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form> -->
+
+    <!-- <hr>
+
+    <div class="button">
+        <button type="button" onclick="toggelform('tohide')">Add Students by adding Excel file</button>
+    </div> -->
+
+    <div id='tohide' class="tohide">
+        <form method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <th>Enrollment Year</th>
+                    <td><input type="text" name="enrollmentyear" required></td>
+                </tr>
+                <tr>
+                    <th>Standard</th>
+                    <td><input type="text" name="standard"></td>
+                </tr>
+                <tr>
+                    <th>Excel file</th>
+                    <td><input type="file" name="file"></td>
+                </tr>
+            </table>
+            <div class="button">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        function toggelform(x) {
+            var a = document.getElementById(x);
+
+            if (a.style.display == 'none') {
+                a.style.display = 'block';
+            }
+            else {
+                a.style.display = 'none';
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
